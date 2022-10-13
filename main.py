@@ -190,9 +190,15 @@ def tip():
         data = json.loads(data)
         pop = data["newslist"][0]["pop"]
         tips = data["newslist"][0]["tips"]
-        return pop,tips
+        real = data["newslist"][0]["real"]
+        wind = data["newslist"][0]["wind"]
+        sunrise = data["newslist"][0]["sunrise"]
+        sunset = data["newslist"][0]["sunset"]
+        aqi = data["newslist"][0]["aqi"]
+        quality = data["newslist"][0]["quality"]
+        return pop,tips,real,wnd,sunrise,sunset,aqi,quality
     else:
-        return "",""
+        return "","","","","","","",""
 
 #推送信息
 def send_message(to_user, access_token, city_name, weather, max_temperature, min_temperature, pipi, lizhi, pop, tips, note_en, note_ch, health_tip, lucky_):
@@ -356,7 +362,7 @@ if __name__ == "__main__":
     lucky_ = lucky()
     # 公众号推送消息
     for user in users:
-        send_message(user, accessToken, city, weather, max_temperature, min_temperature, pipi, lizhi,pop,tips, note_en, note_ch, health_tip, lucky_)
+        send_message(user, accessToken, city, weather, max_temperature, min_temperature, pipi, lizhi,pop,tips,real,wnd,sunrise,sunset,aqi,quality, note_en, note_ch, health_tip, lucky_)
     import time
     time_duration = 3.5
     time.sleep(time_duration)
