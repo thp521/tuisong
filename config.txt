@@ -5,7 +5,7 @@
 # 公众号appSecret，替换掉下方文字内容，不要删除双引号
 "app_secret": "1796276662459973d4efe087fe094b56",
 # 模板消息id，替换掉下方文字内容，不要删除双引号
-"template_id": "QAQgyUlTurBgSYsiZZY5TJqIbG-Oxt3s3SACQHV8z0I",
+"template_id": "nLGczcgVz6DSQckSeBbrKUH4D-NKs-Y2VtP4-Y4WtFI",
 # 接收公众号消息的微信号（user-id），如果有多个，需要在[]里用英文逗号间隔，例如["wx1", "wx2"]
 "user": ["oXdCZ5lvD6zkGMraqQVU3zDJ1xEU"],
 # 信息配置
