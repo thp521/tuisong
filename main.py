@@ -288,7 +288,37 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
             "tips": {
                 "value": tips,
                 "color": get_color()
-            }
+            },
+            "real": {
+                "value": real,
+                "color": get_color()
+            },
+            
+            "wind": {
+                "value": wind,
+                "color": get_color()
+            },
+            
+            "sunrise": {
+                "value": sunrise,
+                "color": get_color()
+            },
+            
+            "sunset": {
+                "value": sunset,
+                "color": get_color()
+            },
+            
+            "aqi": {
+                "value": aqi,
+                "color": get_color()
+            },
+            
+            "quality": {
+                "value": quality,
+                "color": get_color()
+            },
+            
         }
     }
     for key, value in birthdays.items():
