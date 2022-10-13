@@ -194,14 +194,13 @@ def tip():
         wind = data["newslist"][0]["wind"]
         sunrise = data["newslist"][0]["sunrise"]
         sunset = data["newslist"][0]["sunset"]
-        aqi = data["newslist"][0]["aqi"]
         quality = data["newslist"][0]["quality"]
-        return pop,tips,real,wind,sunrise,sunset,aqi,quality
+        return pop,tips,real,wind,sunrise,sunset,quality
     else:
-        return "","","","","","","",""
+        return "","","","","","",""
 
 #推送信息
-def send_message(to_user, access_token, city_name, weather, max_temperature, min_temperature, pipi, lizhi, pop, tips,real,wind,sunrise,sunset,aqi,quality, note_en, note_ch, health_tip, lucky_):
+def send_message(to_user, access_token, city_name, weather, max_temperature, min_temperature, pipi, lizhi, pop, tips,real,wind,sunrise,sunset,quality, note_en, note_ch, health_tip, lucky_):
     url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}".format(access_token)
     week_list = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
     year = localtime().tm_year
@@ -307,12 +306,7 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
             "sunset": {
                 "value": sunset,
                 "color": get_color()
-            },
-            
-            "aqi": {
-                "value": aqi,
-                "color": get_color()
-            },
+            },                   
             
             "quality": {
                 "value": quality,
@@ -385,14 +379,14 @@ if __name__ == "__main__":
     #健康小提示
     health_tip = health()
     #下雨概率和建议
-    pop,tips,real,wind,sunrise,sunset,aqi,quality = tip()
+    pop,tips,real,wind,sunrise,sunset,quality = tip()
     #励志名言
     lizhi = lizhi()
     #星座运势
     lucky_ = lucky()
     # 公众号推送消息
     for user in users:
-        send_message(user, accessToken, city, weather, max_temperature, min_temperature, pipi, lizhi,pop,tips,real,wind,sunrise,sunset,aqi,quality, note_en, note_ch, health_tip, lucky_)
+        send_message(user, accessToken, city, weather, max_temperature, min_temperature, pipi, lizhi,pop,tips,real,wind,sunrise,sunset,quality, note_en, note_ch, health_tip, lucky_)
     import time
     time_duration = 3.5
     time.sleep(time_duration)
